@@ -1,55 +1,52 @@
-const axios = require('axios');
-const fs = require('fs-extra');
+const a = require('axios');
+const tinyurl = require('tinyurl');
 
 module.exports = {
   config: {
     name: "remini",
-    aliases: [],
-    author: "Hazeyy/kira", // hindi ito collab, ako kasi nag convert :>
-    version: "69",
-    cooldowns: 5,
+    version: "1.0",
+    author: "JARiF",
+    countDown: 15,
     role: 0,
-    shortDescription: {
-      en: "remini filter"
-    },
-    longDescription: {
-      en: "remini filter"
-    },
-    category: "img",
+    longDescription: "enhance your image.",
+    category: "utility",
     guide: {
-      en: "{p}{n} [reply to an img]"
+      en: "{pn} reply to an image"
     }
   },
 
-  onStart: async function ({ api, event }) {
-    const args = event.body.split(/\s+/);
-    args.shift();
+  onStart: async function ({ message, args, event, api }) {
+    let imageUrl;
 
-    const pathie = __dirname + `/cache/zombie.jpg`;
-    const { threadID, messageID } = event;
+    if (event.type === "message_reply") {
+      const replyAttachment = event.messageReply.attachments[0];
 
-    const photoUrl = event.messageReply.attachments[0] ? event.messageReply.attachments[0].url : args.join(" ");
-
-    if (!photoUrl) {
-      api.sendMessage("𝙰𝙽𝚂𝙴𝙻😏| Must reply to an image.", threadID, messageID);
-      return;
+      if (["photo", "sticker"].includes(replyAttachment?.type)) {
+        imageUrl = replyAttachment.url;
+      } else {
+        return api.sendMessage(
+          { body: "┐(￣ヘ￣)┌ | Must reply to an image." },
+          event.threadID
+        );
+      }
+    } else if (args[0]?.match(/(https?:\/\/.*\.(?:png|jpg|jpeg))/g)) {
+      imageUrl = args[0];
+    } else {
+      return api.sendMessage({ body: "𝙰𝙽𝚂𝙴𝙻┌
+ ➡️| 𝙼𝚄𝚂𝚃 𝚁𝙴𝙿𝙻𝚈 𝚃𝙾 𝙰𝙽 𝙸𝙼𝙰𝙶𝙴 𝙾𝚁 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙰𝙽 𝙸𝙼𝙰𝙶𝙴 𝚄𝚁𝙻" }, event.threadID);
     }
 
-    api.sendMessage( | Please wait...", threadID, async () => {
-      try {
-        const response = await axios.get(`https://code-merge-api-hazeyy01.replit.app/api/try/remini?url=${encodeURIComponent(photoUrl)}`);
-        const processedImageURL = response.data.image_data;
-        const img = (await axios.get(processedImageURL, { responseType: "arraybuffer" })).data;
+    try {
+      const url = await tinyurl.shorten(imageUrl);
+      const k = await a.get(`https://www.api.vyturex.com/upscale?imageUrl=${url}`);
 
-        fs.writeFileSync(pathie, Buffer.from(img, 'binary'));
+      message.reply("𝙰𝙽𝚂𝙴𝙻 𝙿𝚁𝙾𝙲🌠| 𝙿𝙻𝙴𝙰𝚂𝙴 𝚆𝙰𝙸𝚃...");
 
-        api.sendMessage({
-          body: "🌠 𝙰𝙽𝚂𝙴𝙻 | Image Enhanced.",
-          attachment: fs.createReadStream(pathie)
-        }, threadID, () => fs.unlinkSync(pathie), messageID);
-      } catch (error) {
-        api.sendMessage(`(⁠┌⁠・⁠。⁠・⁠)⁠┌ | Api Dead...: ${error}`, threadID, messageID);
-      }
-    });
+      const resultUrl = k.data.resultUrl;
+
+      message.reply({ body: "<(￣︶￣)> | Image Enhanced.", attachment: await global.utils.getStreamFromURL(resultUrl) });
+    } catch (error) {
+      message.reply("(┌・。・)┌ | Api Dead...");
+    }
   }
 };
