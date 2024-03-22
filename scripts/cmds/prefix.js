@@ -31,12 +31,12 @@ module.exports = {
       confirmThisThread: "Please react to this message to confirm change prefix in your box chat",
       successGlobal: "Changed prefix of system bot to: %1",
       successThisThread: "Changed prefix in your box chat to: %1",
-      myPrefix: "𝚈𝙾, 𝙼𝚈 𝙿𝚁𝙴𝙵𝙸𝚇 𝙸𝚂 [ 𓆩 - 𓆪 ]\n
+      myPrefix: "𝚈𝙾, 𝙼𝚈 𝙿𝚁𝙴𝙵𝙸𝚇 𝙸𝚂 [%2]\n
 𝗦𝗢𝗠𝗘 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 𝗧𝗛𝗔𝗧 𝗠𝗔𝗬 𝗛𝗘𝗟𝗣 𝗬𝗢𝗨:
-➥ -𝗔𝗜 [𝗔𝗦𝗞 𝗬𝗢𝗨𝗥 𝗤𝗨𝗘𝗦𝗧𝗜𝗢𝗡]-> AI [1+1]
-➥ -𝗚𝗘𝗠𝗜𝗡𝗜 [𝗦𝗘𝗡𝗗 𝗣𝗜𝗖𝗧𝗨𝗥𝗘] -> GEMINI [QUERTY]
-➥ -𝗧𝗘𝗠𝗣𝗠𝗔𝗜𝗟 [𝗘𝗠𝗔𝗜𝗟 𝗚𝗘𝗡] -> TEMPMAIL [INBOX/CREATE]
-➥ -𝗖𝗛𝗢𝗥𝗗𝗦 [𝗚𝗨𝗜𝗧𝗔𝗥 𝗖𝗛𝗢𝗥𝗗𝗦] -> CHORDS (TITLE)\n\n𝗛𝗔𝗩𝗘 𝗙𝗨𝗡 𝗨𝗦𝗜𝗡𝗚 𝗜𝗧 𝗘𝗡𝗝𝗢𝗬!❤️\n𝗕𝗢𝗧 𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗥:facebook.com/4rtfloorAkimitsu"
+➥ %2𝗔𝗜 [𝗔𝗦𝗞 𝗬𝗢𝗨𝗥 𝗤𝗨𝗘𝗦𝗧𝗜𝗢𝗡]-> AI [1+1]
+➥ %2𝗚𝗘𝗠𝗜𝗡𝗜[𝗦𝗘𝗡𝗗 𝗣𝗜𝗖𝗧𝗨𝗥𝗘] -> GEMINI [QUERTY]
+➥ %2𝗧𝗘𝗠𝗣𝗠𝗔𝗜𝗟[𝗘𝗠𝗔𝗜𝗟 𝗚𝗘𝗡] -> TEMPMAIL [INBOX/CREATE]
+➥ %2𝗖𝗛𝗢𝗥𝗗𝗦 [𝗚𝗨𝗜𝗧𝗔𝗥 𝗖𝗛𝗢𝗥𝗗𝗦] -> CHORDS (TITLE)\n\n𝗛𝗔𝗩𝗘 𝗙𝗨𝗡 𝗨𝗦𝗜𝗡𝗚 𝗜𝗧 𝗘𝗡𝗝𝗢𝗬!❤️\n𝗕𝗢𝗧 𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗥:facebook.com/4rtfloorAkimitsu"
     }
   },
 
