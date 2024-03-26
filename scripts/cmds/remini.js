@@ -32,15 +32,14 @@ module.exports = {
     } else if (args[0]?.match(/(https?:\/\/.*\.(?:png|jpg|jpeg))/g)) {
       imageUrl = args[0];
     } else {
-      return api.sendMessage({ body: "𝙰𝙽𝚂𝙴𝙻┌
- ➡️| 𝙼𝚄𝚂𝚃 𝚁𝙴𝙿𝙻𝚈 𝚃𝙾 𝙰𝙽 𝙸𝙼𝙰𝙶𝙴 𝙾𝚁 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙰𝙽 𝙸𝙼𝙰𝙶𝙴 𝚄𝚁𝙻" }, event.threadID);
+      return api.sendMessage({ body: "┐(￣ヘ￣)┌ | Must reply to an image or provide an image URL." }, event.threadID);
     }
 
     try {
       const url = await tinyurl.shorten(imageUrl);
       const k = await a.get(`https://www.api.vyturex.com/upscale?imageUrl=${url}`);
 
-      message.reply("𝙰𝙽𝚂𝙴𝙻 𝙿𝚁𝙾𝙲🌠| 𝙿𝙻𝙴𝙰𝚂𝙴 𝚆𝙰𝙸𝚃...");
+      message.reply("⊂(・﹏・⊂) | Please wait...");
 
       const resultUrl = k.data.resultUrl;
 
