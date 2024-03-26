@@ -40,7 +40,7 @@
     },
     {
         "domain": ".facebook.com",
-        "expirationDate": 1716670582,
+        "expirationDate": 1716671190,
         "hostOnly": false,
         "httpOnly": false,
         "name": "vpd",
