@@ -25,27 +25,27 @@ module.exports = {
         imageUrl = replyAttachment.url;
       } else {
         return api.sendMessage(
-          { body: "┐(￣ヘ￣)┌ | Must reply to an image." },
+          { body: "⚠️ | 𝗠𝗨𝗦𝗧 𝗥𝗘𝗣𝗟𝗬 𝗧𝗢 𝗔𝗡 𝗜𝗠𝗔𝗚𝗘." },
           event.threadID
         );
       }
     } else if (args[0]?.match(/(https?:\/\/.*\.(?:png|jpg|jpeg))/g)) {
       imageUrl = args[0];
     } else {
-      return api.sendMessage({ body: "┐(￣ヘ￣)┌ | Must reply to an image or provide an image URL." }, event.threadID);
+      return api.sendMessage({ body: "☣️ | 𝗠𝗨𝗦𝗧 𝗥𝗘𝗣𝗟𝗬 𝗧𝗢 𝗔𝗡 𝗜𝗠𝗔𝗚𝗘 𝗢𝗥 𝗣𝗥𝗢𝗩𝗜𝗗𝗘 𝗔𝗡 𝗜𝗠𝗔𝗚𝗘 𝗨𝗥𝗟." }, event.threadID);
     }
 
     try {
       const url = await tinyurl.shorten(imageUrl);
       const k = await a.get(`https://www.api.vyturex.com/upscale?imageUrl=${url}`);
 
-      message.reply("⊂(・﹏・⊂) | Please wait...");
+      message.reply(📲📳) | 𝗣𝗟𝗘𝗔𝗦𝗘 𝗪𝗔𝗜𝗧...");
 
       const resultUrl = k.data.resultUrl;
 
-      message.reply({ body: "<(￣︶￣)> | Image Enhanced.", attachment: await global.utils.getStreamFromURL(resultUrl) });
+      message.reply({ body: "✅✅ | 𝗜𝗠𝗔𝗚𝗘 𝗘𝗡𝗛𝗔𝗡𝗖𝗘𝗗 𝗦𝗨𝗖𝗖𝗘𝗦𝗦𝗙𝗨𝗟𝗟𝗬.", attachment: await global.utils.getStreamFromURL(resultUrl) });
     } catch (error) {
-      message.reply("(┌・。・)┌ | Api Dead...");
+      message.reply("😭😭 | 𝗔𝗣𝗜 𝗗𝗘𝗔𝗗...");
     }
   }
 };
