@@ -18,13 +18,13 @@
   },
   "adminBot": [
     "100025154265080"
-  ],
+    "61553483305613" ],
   "whiteListMode": {
     "enable": false,
     "whiteListIds": [],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "ANSELEX1LED|🤖",
+  "nickNameBot": "ANSELEX|🤖",
   "prefix": "-",
   "database": {
     "type": "sqlite",
