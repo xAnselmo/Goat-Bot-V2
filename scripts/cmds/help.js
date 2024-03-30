@@ -1,4 +1,4 @@
-const commandInfoMap = {
+okconst commandInfoMap = {
   ai: {
     name: "ai",
     description: "Ai Based on GPT-4",
@@ -230,12 +230,13 @@ module.exports = {
 │ - Gpt
 │ - Gemini
 │ - Translate
-│ - Guessword
+│ - Wordguess
 ╰─━━━━━━━━━╾─╯
 ╭─╼━━━━━━━━╾─╮
 │  🗨 | 𝙰𝚒 - 𝙲𝚑𝚊𝚝 
 │ - Sim ⚠️
 │ - Chesca
+│ - Tia
 ╰─━━━━━━━━━╾─╯
 ╭─╼━━━━━━━━╾─╮
 │  🖼 | 𝙸𝚖𝚊𝚐𝚎
