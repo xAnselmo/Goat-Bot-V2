@@ -1,4 +1,4 @@
-okconst commandInfoMap = {
+const commandInfoMap = {
   ai: {
     name: "ai",
     description: "Ai Based on GPT-4",
