@@ -1,4 +1,4 @@
-noconst axios = require('axios');
+const axios = require('axios');
 
 async function fetchFromAI(url, params) {
   try {
@@ -45,7 +45,7 @@ module.exports = {
   onStart: async function ({ api, event, args }) {
     const input = args.join(' ').trim();
     if (!input) {
-      api.sendMessage(`𝗔𝗥𝗡 𝗜𝗦 𝗔𝗟𝗜𝗩𝗘|⚡ 𝙰𝚒\n━━━━━━━━━━━━━━━━\nPlease provide a question or statement.\n━━━━━━━━━━━━━━━━`, event.threadID, event.messageID);
+      api.sendMessage(`𝗔𝗥𝗡 𝗜𝗦 𝗔𝗟𝗜𝗩𝗘|⚡ \n━━━━━━━━━━━━━━━━\nPlease provide a question or statement.\n━━━━━━━━━━━━━━━━`, event.threadID, event.messageID);
       return;
     }
 
