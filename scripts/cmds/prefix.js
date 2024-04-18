@@ -4,7 +4,7 @@ const { utils } = global;
 module.exports = {
   config: {
     name: "prefix",
-    alias: ["🤖"], 
+    alias: ["🧋"], 
     version: "1.3",
     author: "NTKhang",
     countDown: 5,
@@ -86,7 +86,7 @@ module.exports = {
   },
 
   onChat: async function ({ event, message, getLang }) {
-    if (event.body && (event.body.toLowerCase() === "prefix" || event.body.toLowerCase() === "🤖"))
+    if (event.body && (event.body.toLowerCase() === "prefix" || event.body.toLowerCase() === "🧋"))
       return () => {
         return message.reply(getLang("myPrefix", global.GoatBot.config.prefix, utils.getPrefix(event.threadID)));
       };
