@@ -4,7 +4,7 @@ const { utils } = global;
 module.exports = {
   config: {
     name: "prefix",
-    alias: ["🧋"], 
+    alias: ["🤖"], 
     version: "1.3",
     author: "NTKhang",
     countDown: 5,
@@ -31,7 +31,12 @@ module.exports = {
       confirmThisThread: "Please react to this message to confirm change prefix in your box chat",
       successGlobal: "Changed prefix of system bot to: %1",
       successThisThread: "Changed prefix in your box chat to: %1",
-      myPrefix: "⚡🐾 𝙷𝚎𝚕𝚕𝚘 𝙵𝚛𝚒𝚎𝚗𝚍 |🐾⚡\n𝚃𝚑𝚒𝚜 𝚒𝚜 𝚖𝚢 𝙿𝚛𝚎𝚏𝚒𝚡 [ %2 ]\n\nHere's the commands that you can use:\n\n━━ 📖 | 𝙴𝚍𝚞𝚌𝚊𝚝𝚒𝚘𝚗 ━━\n%2ai <𝑞𝑢𝑒𝑠𝑡𝑖𝑜𝑛>\n%2gpt  <𝑞𝑢𝑒𝑠𝑡𝑖𝑜𝑛>\n%2gemini <𝑞𝑢𝑒𝑠𝑡𝑖𝑜𝑛>\n\n━━ 🖼 | 𝙸𝚖𝚊𝚐𝚎 ━━\n%2pinterest <𝑐𝑎𝑡>\n%2remini <𝑐𝑎𝑡> \n\n━━ 📻 | 𝙼𝚞𝚜𝚒𝚌 ━━\n%2spotify<𝑡𝑖𝑡𝑙𝑒 𝑏𝑦 𝑎𝑟𝑡𝑖𝑠𝑡>\n%2song <𝑡𝑖𝑡𝑙𝑒 𝑏𝑦 𝑎𝑟𝑡𝑖𝑠𝑡>\n%2play <𝑡𝑖𝑡𝑙𝑒  𝑎𝑟𝑡𝑖𝑠𝑡>\n\nChat -𝚑𝚎𝚕𝚙 to see more!\n\n𝗔𝗗𝗠𝗜𝗡/𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗥 : facebook.com/4rtfloorAkimitsu"
+      myPrefix: "⚡🐾 𝙷𝚎𝚕𝚕𝚘 𝙵𝚛𝚒𝚎𝚗𝚍 |🐾⚡\n𝚃𝚑𝚒𝚜 𝚒𝚜 𝚖𝚢 𝙿𝚛𝚎𝚏𝚒𝚡 [ %2 ]\n\nHere's the commands that you can use:\n\n━━ 📖 | 𝙴𝚍𝚞𝚌𝚊𝚝𝚒𝚘𝚗 ━━\n%2ai <𝑞𝑢𝑒𝑠𝑡𝑖𝑜𝑛>\n%2gpt  <𝑞𝑢𝑒𝑠𝑡𝑖𝑜𝑛>\n%2gemini <𝑞𝑢𝑒𝑠𝑡𝑖𝑜𝑛>\n\n━━ 🖼 | 𝙸𝚖𝚊𝚐𝚎 ━━\n%2pinterest <𝑐𝑎𝑡>\n%2remini <𝑐𝑎𝑡> \n\n━━ 📻 | 𝙼𝚞𝚜𝚒𝚌 ━━\n%2spotify<𝑡𝑖𝑡𝑙𝑒 𝑏𝑦 𝑎𝑟𝑡𝑖𝑠𝑡>\n%2song <𝑡𝑖𝑡𝑙𝑒 𝑏𝑦 𝑎𝑟𝑡𝑖𝑠𝑡>\n%2play <𝑡𝑖𝑡𝑙𝑒  𝑎𝑟𝑡𝑖𝑠𝑡>\n\nChat -𝚑𝚎𝚕𝚙 to see more! 
+𝗥𝗨𝗟𝗘𝗦 !!!\n
+☠︎︎ 𝗡𝗢 𝗡𝗢𝗧 𝗖𝗛𝗔𝗡𝗚𝗘 𝗡𝗔𝗠𝗘/𝗣𝗜𝗖𝗧𝗨𝗥𝗘 𝗢𝗙 𝗧𝗛𝗘 𝗚𝗥𝗢𝗨𝗣
+☠︎︎ 𝗥𝗘𝗦𝗣𝗘𝗖𝗧 𝗘𝗔𝗖𝗛 𝗢𝗧𝗛𝗘𝗥, 𝗡𝗢 𝗕𝗨𝗟𝗟𝗬𝗜𝗡𝗚
+
+\n\n𝗔𝗗𝗠𝗜𝗡/𝗗𝗘𝗩𝗘𝗟𝗢𝗣𝗘𝗥 : facebook.com/4rtfloorAkimitsu"
     }
   },
 
@@ -81,7 +86,7 @@ module.exports = {
   },
 
   onChat: async function ({ event, message, getLang }) {
-    if (event.body && (event.body.toLowerCase() === "prefix" || event.body.toLowerCase() === "🧋"))
+    if (event.body && (event.body.toLowerCase() === "prefix" || event.body.toLowerCase() === "🤖"))
       return () => {
         return message.reply(getLang("myPrefix", global.GoatBot.config.prefix, utils.getPrefix(event.threadID)));
       };
