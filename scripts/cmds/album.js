@@ -177,4 +177,4 @@ module.exports = {
       global.GoatBot.onReply.delete(event.messageID);
     }
   },
-};
+};m
