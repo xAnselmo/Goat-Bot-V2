@@ -47,7 +47,7 @@ module.exports = {
           return api.sendMessage("Failed to generate temporary email.", event.threadID, event.messageID);
         }
 
-        api.sendMessage(`📩 Here's your generated temporary email: ${tempMailData.email}`, event.threadID, event.messageID);
+        api.sendMessage(`📩 𝖧𝖤𝖱𝖤 𝖸𝖮𝖴𝖱 𝖦𝖤𝖭𝖤𝖱𝖠𝖳𝖤𝖣 𝖳𝖤𝖬𝖯𝖬𝖠𝖨𝖫 𝖥𝖱𝖮𝖬 𝖠𝖭𝖲𝖤𝖫\n 𝖤𝖬𝖠𝖨𝖫➪: ${tempMailData.email}`, event.threadID, event.messageID);
       } else {
         return api.sendMessage("Please specify 'inbox' or 'create'.", event.threadID, event.messageID);
       }
